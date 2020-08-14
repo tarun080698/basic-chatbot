@@ -1,0 +1,29 @@
+{
+  "AD": [
+    {
+      "Symptom": "Alerts / reports not getting triggered - Manual",
+      "Problem": "SMTP Not working",
+      "Root-Cause": [
+        "SMTP not configured | reconfigure",
+        "SMTP telnet port not working",
+        "Blocked on SMTP",
+        "Customer SMTP server not working"
+      ]
+    },
+    {
+      "Symptom": "Recursive alerts triggering - Automated",
+      "Problem": "Continuous alerts seen in the inbox",
+      "Root-Cause": ["Python Library issue "]
+    }
+  ],
+  "DS": [
+    {
+      "Symptom": "Error in log files while triggring report/alert",
+      "Problem": "Error in log files while triggring report/alert",
+      "Root-Cause": [
+        "Improper Queries",
+        "Special characters in alert/report Data"
+      ]
+    }
+  ]
+}

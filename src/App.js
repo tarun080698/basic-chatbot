@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import "./App.css";
-import Chatbot from "react-chatbot-kit";
 
-import config from "./BotConfig/config";
-import MessageParser from "./Components/MessageParser";
-import ActionProvider from "./Components/ActionProvider";
+
+import "./App.css";
+import BotButton from "./BotConfig/BotButton";
 
 class App extends Component {
+  
+
   render() {
     return (
       <div className="App">
-        <Chatbot
-          actionProvider={ActionProvider}
-          messageParser={MessageParser}
-          config={config}
-        />
+        <BotButton className="botbtn" />
       </div>
     );
   }

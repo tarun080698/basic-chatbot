@@ -1,0 +1,77 @@
+// for issue 1-5
+{
+  "Alerts / reports not getting triggered - Manual": {
+    "SMTP Not working": [
+      "SMTP not configured | reconfigure",
+      "SMTP telnet port not working",
+      "Blocked on SMTP",
+      "Customer SMTP server not working"
+    ],
+    "DS to UNET not working": ["Blocked on Firewall", "Blocked on proxy"],
+    "Redis not working on DataStore": [
+      "Data stuck in DataQueue",
+      "Report stuck in ReportQueue"
+    ],
+    "Error in log files while triggring report/alert": [
+      "Improper Queries",
+      "Special characters in alert/report Data"
+    ],
+    "Report stuck in celery queue": [
+      "H/W | Memory issues",
+      "DS - CR Connectivity not working,"
+    ]
+  },
+  "Alerts not triggering in the inbox - Manual\t": {
+    "Inbox is empty | Specific alert not triggering": [
+      "Data not available in logs (Alert not triggered)"
+    ]
+  },
+  "Alerts / reports not getting triggered - automated": {
+    "SMTP Not working": [
+      "SMTP not configured | reconfigure",
+      "SMTP telnet port not working",
+      "Blocked on SMTP",
+      "Customer SMTP server not working"
+    ],
+    "DS to CR Connectivity not working": ["N/w Issue |  Config mismatch"],
+    "Redis not working on DataStore": [
+      "Data stuck in DataQueue",
+      "Report stuck in ReportQueue"
+    ],
+    "Scheduler not working": [
+      "ilicrscheduler service stopped",
+      "cron misconfigured"
+    ],
+    "Delay in alerts/reports": ["Not enough celeryworkers"],
+    "Report stuck in celery queue": [
+      "H/W | Memory issues",
+      "DS - CR Connectivity not working,"
+    ],
+    "Redis not working on DataStore": [
+      "Data stuck in DataQueue",
+      "Report stuck in ReportQueue"
+    ],
+    "Setup connectivity with UNET not working": [
+      "No UNET connectivity | CR-DS | A10"
+    ],
+    "Notif email service issue": ["Service- FATAL | STOPPED"],
+    "Incorrect Settings in the config files": [
+      "configuration mismatch - agent file | correlator file"
+    ],
+    "Error in log files while triggring report/alert": [
+      "Improper Queries",
+      "Special characters in alert/report Data"
+    ]
+  },
+  "Alerts not triggering in the inbox - Automatic": {
+    "Inbox is empty | Specific alert not triggering": [
+      "Data not available in logs (Alert not triggered)"
+    ]
+  },
+  "Recursive alerts triggering - Automated": {
+    "Continuous alerts seen in the inbox": ["Python Library issue "],
+    "Continuous alerts seen in the inbox even After deleting from the Console": [
+      "Deleted from Console but Present in backend"
+    ]
+  }
+}
