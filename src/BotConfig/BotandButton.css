@@ -17,7 +17,7 @@ div.BotButton {
 
 div.react-chatbot-kit-chat-inner-container {
   width: 350px;
-  height: 600px;
+  height: 590px;
 }
 
 div.react-chatbot-kit-chat-header {
@@ -48,18 +48,18 @@ div.react-chatbot-kit-chat-bot-message-container {
 }
 
 div.react-chatbot-kit-chat-bot-message {
-  width: 320px;
+  width: 310px;
 }
 
 /* USer message component*/
 
 div.react-chatbot-kit-user-chat-message-container{
     width: 100%;
-    height: auto;
+    height: inherit;
 }
 
 div.react-chatbot-kit-chat-user-message {
-  width: 320px;
+  width: 310px;
   background-color: #2e2501;
   border-radius: 5px;
   font-size: 1.5rem;

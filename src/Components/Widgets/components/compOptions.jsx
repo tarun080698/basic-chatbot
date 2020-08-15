@@ -10,7 +10,7 @@ const ComponentOptions = props => {
       id: 1
     },
     {
-      name: "Correlator",
+      name: "Co-relator",
       handler: props.actionProvider.handleCrOption,
       id: 2
     },

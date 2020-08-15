@@ -5,7 +5,6 @@
 class ActionProvider {
   state = {
     message: null,
-    data: null,
   };
   constructor(createChatBotMessage, setStateFunc, fetchData) {
     this.createChatBotMessage = createChatBotMessage;
@@ -40,7 +39,7 @@ class ActionProvider {
       {
         withAvatar: true,
         delay: 1000,
-        widget: "initial",
+        widget: "compList",
       }
     );
     this.addMessageToBotState(message);
@@ -64,51 +63,67 @@ class ActionProvider {
 
   handleAdOption = () => {
     console.log("AD clicked");
-    
-    const message = this.createChatBotMessage("Please tell more something about the issue", {
-      loading: true,
-      terminateLoading: true,
-      withAvatar: true,
-      widget: "adapter",
-    });
+    // let ad_data = JsonData.AD
+    // // const message = this.createChatBotMessage("Please tell use more about your issue.")
+    // // this.addMessageToBotState(message)
+    // // console.log(props.lowerMsg)
+    // let options = []
+    // for (var i = 0; i < ad_data.length; i++) {
+    //   options.push(ad_data[i].Symptom)
+    // }
 
-    this.addMessageToBotState(message);
+    const messages = this.createChatBotMessage(
+      "Let me check what possibly can go wrong with adapter.",
+      {
+        loading: true,
+        terminateLoading: true,
+        widget: "adapterIssues",
+      }
+    );
+
+    this.addMessageToBotState(messages);
   };
 
   handleCrOption = () => {
     console.log("CR clicked");
-    const message = this.createChatBotMessage(`CR clicked`, {
-      loading: true,
-      terminateLoading: true,
-      withAvatar: true,
-      widget: "correlator",
-    });
+    const messages = this.createChatBotMessage(
+      "Let me check what possibly can go wrong with co-relator.",
+      {
+        loading: true,
+        terminateLoading: true,
+        widget: "correlatorIssues",
+      }
+    );
 
-    this.addMessageToBotState(message);
+    this.addMessageToBotState(messages);
   };
 
   handleDsOption = () => {
     console.log("DS clicked");
-    const message = this.createChatBotMessage(`DS clicked`, {
-      loading: true,
-      terminateLoading: true,
-      withAvatar: true,
-      widget: "dataStore",
-    });
+    const messages = this.createChatBotMessage(
+      "Let me check what possibly can go wrong with co-relator.",
+      {
+        loading: true,
+        terminateLoading: true,
+        widget: "dataStoreIssues",
+      }
+    );
 
-    this.addMessageToBotState(message);
+    this.addMessageToBotState(messages);
   };
 
   handleLcOption = () => {
     console.log("LC clicked");
-    const message = this.createChatBotMessage(`LC clicked`, {
-      loading: true,
-      terminateLoading: true,
-      withAvatar: true,
-      widget: "localConsole",
-    });
+    const messages = this.createChatBotMessage(
+      "Let me check what possibly can go wrong with co-relator.",
+      {
+        loading: true,
+        terminateLoading: true,
+        widget: "localConsoleIssues",
+      }
+    );
 
-    this.addMessageToBotState(message);
+    this.addMessageToBotState(messages);
   };
 
   // somewhat same for reply, don't change unless necessary

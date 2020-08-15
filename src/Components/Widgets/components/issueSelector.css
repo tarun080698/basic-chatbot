@@ -1,0 +1,41 @@
+.issue-selector-container {
+  background-color: #392f00;
+  color: #fff;
+  border-radius: 5px;
+  align-self: center;
+  margin: 5;
+  align-content: flex-end;
+  padding: 8px;
+  font-size: 0.9rem;
+  width: auto;
+}
+
+.issue-selector-heading {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
+.issue-button-confirm {
+  display: inline;
+  margin-left: 12px;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #392f00;
+  border: none;
+}
+
+.issue-selector {
+  width: auto;
+  height: auto;
+  background: #fff;
+  color: #392f00;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  border: none;
+  position: relative;
+  display: inline-block;
+}

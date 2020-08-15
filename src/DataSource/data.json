@@ -18,8 +18,8 @@
   ],
   "DS": [
     {
-      "Symptom": "Error in log files while triggring report/alert",
-      "Problem": "Error in log files while triggring report/alert",
+      "Symptom": "Error in log files while triggering report/alert",
+      "Problem": "Error in log files while triggering report/alert",
       "Root-Cause": [
         "Improper Queries",
         "Special characters in alert/report Data"

@@ -5,6 +5,7 @@ import Chatbot from "react-chatbot-kit";
 import config from "./config";
 import MessageParser from "../Components/MessageParser";
 import ActionProvider from "../Components/ActionProvider";
+// import botbtnImg from '../assets/images/botbtn.jpg'
 
 class BotButton extends Component {
   state = {
