@@ -1,0 +1,120 @@
+{
+  "id-1": {
+    "pre-talk": "👋 Hi. I’m Donna and I’m awesome.",
+    "ask": "I work for DNIF. What can i help you?",
+    "options": [
+      {
+        "value": "Troubleshooting",
+        "goto": "id-2"
+      },
+      {
+        "value": "Sales Request",
+        "goto": "id-11"
+      },
+      {
+        "value": "Service Request",
+        "goto": "id-12"
+      }
+    ]
+  },
+  "id-2": {
+    "pre-talk": "Please wait, i will check..",
+    "ask": "Reports / Alerts are not getting triggered?",
+    "options": [
+      {
+        "value": "Automated",
+        "goto": "id-3"
+      },
+      {
+        "value": "Manual",
+        "goto": "id-4"
+      }
+    ]
+  },
+  "id-3": {
+    "pre-talk": "Alright - let me check...",
+    "ask": "Is you SMTP configured?",
+    "options": [
+      {
+        "value": "Yes",
+        "goto": "id-6"
+      },
+      {
+        "value": "No",
+        "goto": "id-5"
+      }
+    ]
+  },
+  "id-4": {
+    "pre-talk": "Alright - let me check...",
+    "ask": "Is your mail-id configured in SMTP?",
+    "options": [
+      {
+        "value": "Yes",
+        "goto": "id-6"
+      },
+      {
+        "value": "No",
+        "goto": "id-5"
+      }
+    ]
+  },
+  "id-5": {
+    "pre-talk": "Got it...",
+    "ask": "Check your SMTP configuration file located at <b>........</b>, you will see your SMTP details in the file.",
+    "options": null
+  },
+  "id-6": {
+    "pre-talk": "need to check  SMTP telnet ",
+    "ask": "SMTP telnet/port, is it working?",
+    "options": [
+      {
+        "value": "Yes",
+        "goto": "id-7"
+      },
+      {
+        "value": "No",
+        "goto": "id-9"
+      }
+    ]
+  },
+  "id-7": {
+    "pre-talk": "Please wait, i will check...",
+    "ask": "Is something blocked in SMTP?",
+    "options": [
+      {
+        "value": "Yes",
+        "goto": "id-9"
+      },
+      {
+        "value": "No",
+        "goto": "id-8"
+      }
+    ]
+  },
+  "id-8": {
+    "pre-talk": "Seems like you have it covered.",
+    "ask": "Thanks",
+    "options":null
+  },
+  "id-9": {
+    "pre-talk": "Please wait, i will check...",
+    "ask": "Please raise a ticket at portal.",
+    "options":null
+  },
+  "id-10": {
+    "pre-talk": "Please wait, i will check...",
+    "ask": "I have nothing more to ask.",
+    "options":null
+  },
+  "id-11": {
+        "pre-talk": "Please wait, i will check...",
+        "ask": "I will help you with sales request.",
+        "options":null
+  },
+  "id-12": {
+        "pre-talk": "Please wait, i will check...",
+        "ask": "I will help you with service request.",
+        "options":null
+      }
+}

@@ -1,0 +1,19 @@
+.opt-btn {
+    padding: 8px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white; 
+    border: 2px solid rgb(40, 115, 212);
+    border-radius: 20px;
+    color:rgb(40, 115, 212);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 4px 40px;
+}
+
+.div{
+    display: block;
+    margin: 0;
+    padding: 0px;
+    
+}

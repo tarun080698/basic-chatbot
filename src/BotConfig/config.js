@@ -1,0 +1,63 @@
+// Config starter code
+
+import React from "react";
+import { createChatBotMessage } from "react-chatbot-kit";
+import BotAvatar from "../Widgets/BotView/BotAvatar";
+import UserAvatar from "../Widgets/UserView/UserAvatar";
+
+import data from "../assets/DataSource/sample_diagnostics_qna.json"
+import Questions from '../Widgets/Questions/Question'
+
+
+const botName = "Donna";
+// Bronco
+const config = {
+  botName: botName,
+  lang: "no",
+  initialMessages: [
+    createChatBotMessage(`👋 Hi. I’m ${botName} and I’m awesome.`,
+      {
+      withAvatar:true,
+      loading: true,
+      terminateLoading: true,
+      delay: 500,
+      }),
+      createChatBotMessage(`I work for DNIF. What can i help you?`,
+      {
+      loading: true,
+      terminateLoading: true,
+      widget:"questions",
+      delay: 1000,
+     }),
+  ],
+
+  state: {
+    goto: "id-1",
+    ask:data["id-1"]["ask"],
+    talk: data["id-1"]["pre-talk"],
+  },
+  
+
+  widgets: [
+    {
+      widgetName: "questions",
+      widgetFunc: (props) => <Questions {...props} />,
+      mapStateToProps: ["goto", "ask","talk"],
+    },
+  ],
+
+  // to change color or bot message-background & input send button
+  customStyles: {
+    chatButton: {
+      backgroundColor: "rgb(60, 134, 230)",
+    },
+  },
+  customComponents: {
+    // Replaces the default bot avatar
+    botAvatar: (props) => <BotAvatar {...props} />,
+    // // Replaces the default user icon
+    userAvatar: (props) => <UserAvatar {...props} />,
+  },
+};
+
+export default config;

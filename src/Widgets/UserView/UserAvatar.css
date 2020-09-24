@@ -1,0 +1,13 @@
+div.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: rgb(60, 134, 230);
+    margin-left: 8px;
+    background-color:#cccaca;
+    font-weight: 500;
+}

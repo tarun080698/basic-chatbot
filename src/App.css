@@ -1,0 +1,15 @@
+.App {
+  width: auto;
+  height: auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 35px;
+  z-index: 9999;
+  right: 70px;
+}
+
+html{
+  background-color: lightgrey;
+}
