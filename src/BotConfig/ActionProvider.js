@@ -1,8 +1,10 @@
 // ActionProvider starter code
+import chats from "../BotConfig/chats"
+var chat = chats.chat
+
 class ActionProvider {
     state = {
       message: null,
-      chats: [],
     };
     constructor(createChatBotMessage, setStateFunc) {
       this.createChatBotMessage = createChatBotMessage;
@@ -10,25 +12,20 @@ class ActionProvider {
     }
   
   handleQuestion = (goto, ask, talk) => {
-    console.log("here");
-    this.setState((prevState) => ({ ...prevState, goto }));
-    this.setState((prevState) => ({ ...prevState, ask }));
-    this.setState((prevState) => ({ ...prevState, talk }));
+    this.setState((prevState) => ({ ...prevState, goto, ask, talk }));
     this.addMessageToBotState(this.createChatBotMessage(talk, {
       withAvatar:true,
       loading: true,
       terminateLoading: true,
       delay: 500,
     }))
-    let message = this.createChatBotMessage(ask ,{
+    this.addMessageToBotState(this.createChatBotMessage(ask ,{
       loading: true,
       terminateLoading: true,
       widget: "questions",
       delay: 1000,
-    });
-    this.addMessageToBotState(message);
+    }))
   };
-  
   
   setUserInput = (message) => {
       const user_message = {
@@ -36,27 +33,21 @@ class ActionProvider {
         type: "user",
         withAvatar:false
       };
-      this.setState((state) => ({
-        ...state,
-        messages: [...state.messages, user_message],
-      }));
+      this.addMessageToBotState(user_message)
     };
 
   setBotMessage = (message) => {
-    console.log("in bot message");
       const bot_message = {
         message: message,
-        type: "bot",
+        type: "user",
         withAvatar:false
       };
-      this.setState((state) => ({
-        ...state,
-        messages: [...state.messages, bot_message],
-      }));
+    this.addMessageToBotState(bot_message)
     };
   
     // somewhat same for reply, don't change unless necessary
   addMessageToBotState = (messages) => {
+    chat.push(messages)
       if (Array.isArray(messages)) {
         this.setState((state) => ({
           ...state,

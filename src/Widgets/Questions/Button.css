@@ -8,11 +8,17 @@
     color:rgb(40, 115, 212);
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0 0 4px 40px;
+    margin: 0 0 4px 25px;
+    cursor: pointer;
 }
 
+button:hover {
+    background-color: rgb(40, 115, 212);
+    color: whitesmoke;
+  }
+
 .div{
-    display: block;
+    display: inline-block;
     margin: 0;
     padding: 0px;
     
