@@ -2,6 +2,7 @@
     padding: 8px;
     width: fit-content;
     height: fit-content;
+    min-width: 50px;
     background-color: white; 
     border: 2px solid rgb(40, 115, 212);
     border-radius: 20px;
@@ -12,7 +13,7 @@
     cursor: pointer;
 }
 
-button:hover {
+.opt-btn:hover {
     background-color: rgb(40, 115, 212);
     color: whitesmoke;
   }

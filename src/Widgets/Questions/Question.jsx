@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import Button from "./Button.jsx"
+import Button from "./Buttons.jsx"
 import {FadeIn} from "react-anim-kit" 
 import data from "../../assets/DataSource/sample_diagnostics_qna.json";
-
-// import chats from "../../BotConfig/chats";
-// var chat = chats.chat;
 
 class Questions extends Component {
   constructor(props) {
@@ -14,6 +11,7 @@ class Questions extends Component {
       clear: false,
     } 
   }
+
 
   updateId(goto, option) { 
     console.log("in update")
@@ -28,7 +26,7 @@ class Questions extends Component {
       <div>
         <FadeIn left by={200}>
           {!this.state.clear && options !== null ? (options.map((opt, i) => {
-            return <Button  key={i} value={opt.value} goto={opt.goto} action={(goto, value) => this.updateId(goto, value)} />
+            return <Button key={i} value={opt.value} goto={opt.goto} action={(goto, value) => this.updateId(goto, value)} />
           })) : (<></>)}
           </FadeIn>
         </div>

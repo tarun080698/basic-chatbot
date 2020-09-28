@@ -1,14 +1,13 @@
 // ActionProvider starter code
-import chats from "../BotConfig/chats"
-var chat = chats.chat
 
 class ActionProvider {
     state = {
       message: null,
     };
-    constructor(createChatBotMessage, setStateFunc) {
+    constructor(createChatBotMessage, setStateFunc, createClientMessage) {
       this.createChatBotMessage = createChatBotMessage;
       this.setState = setStateFunc;
+      this.createClientMessage = createClientMessage
     }
   
   handleQuestion = (goto, ask, talk) => {
@@ -28,18 +27,18 @@ class ActionProvider {
   };
   
   setUserInput = (message) => {
-      const user_message = {
+      const user_message = this.createClientMessage(message ,{
         message: message,
         type: "user",
         withAvatar:false
-      };
+      });
       this.addMessageToBotState(user_message)
     };
 
   setBotMessage = (message) => {
       const bot_message = {
         message: message,
-        type: "user",
+        type: "bot",
         withAvatar:false
       };
     this.addMessageToBotState(bot_message)
@@ -47,7 +46,6 @@ class ActionProvider {
   
     // somewhat same for reply, don't change unless necessary
   addMessageToBotState = (messages) => {
-    chat.push(messages)
       if (Array.isArray(messages)) {
         this.setState((state) => ({
           ...state,

@@ -1,67 +1,43 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+
 import "./Button.css";
 import Chatbot from "react-chatbot-kit";
 
-import config from "./config";
-import MessageParser from "./MessageParser";
-import ActionProvider from "./ActionProvider";
+import config from "../BotConfig/config";
+import actionProvider from "../BotConfig/ActionProvider";
+import messageParser from "../BotConfig/MessageParser";
 
-import open_bot from "../assets/images/support-service-bot.jpg";
-import close_bot from "../assets/images/close-bot.png";
+import icon from "../assets/images/support-service-bot.jpg";
 
-import chats from "../BotConfig/chats";
-var talks = chats.chat;
+function BotButton() {
 
-class BotButton extends Component {
-  state = {
-    chatbot: false,
+  const [showBot, toggleBot] = useState(false);
+  
+  const saveMessages = (messages) => {
+    localStorage.setItem("chat_messages", JSON.stringify(messages));
   };
 
-  handleClick = () => {
-    if (this.state.chatbot) {
-      this.setState({
-        chatbot: false,
-      });
-    } else {
-      this.setState({ chatbot: true });
-    }
+  const loadMessages = () => {
+    const messages = JSON.parse(localStorage.getItem("chat_messages"));
+    // console.log(messages.length);
+    // if(messages.length >= 24) localStorage.clear() 
+    return messages;
   };
-
-  render() {  
-    const bot_element = (
-      <div>
-        <Chatbot
-          className="chat-window"
-          actionProvider={ActionProvider}
-          messageParser={MessageParser}
-          config={config}
-        />
-        <img
-              className="chatbot-button-image"
-              src={close_bot}
-              onClick={this.handleClick}
-              alt="botButton"
-        />
-      </div>
-    );
 
     return (
       <div className="BotButton">
-        {this.state.chatbot ? (
-          <>
-            {bot_element}
-          </>
-        ) : (
-          <img
-            className="chatbot-button-image"
-            src={open_bot}
-            onClick={this.handleClick}
-            alt="botButton"
+        {showBot && (
+          <Chatbot
+            config={config}
+            actionProvider={actionProvider}
+            messageHistory={loadMessages()}
+            messageParser={messageParser}
+            saveMessages={saveMessages}
           />
-            )}
+        )}
+        <img onClick={() => toggleBot((prev) => !prev)} className="bot-icon" src={icon} alt="bot icon"></img>
       </div>
     );
   }
-}
 
 export default BotButton;

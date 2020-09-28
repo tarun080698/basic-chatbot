@@ -1,4 +1,4 @@
-img.chatbot-button-image {
+img.bot-icon {
   position: fixed;
   width: 60px;
   height: 60px;
@@ -22,23 +22,11 @@ img.chatbot-button-image {
   height: 550px;
   }
   
-  div.react-chatbot-kit-chat-header {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  background-color: rgb(60, 134, 230);
-  font-family: "Times New Roman";
-  width: auto;
-  height: auto;
-  text-align: center;
-  font-size: 25px;
-  color: rgb(248, 248, 248);
-  } 
-  
   /* chatbot message component */
   div.react-chatbot-kit-chat-message-container {
   background-color: white;
   width: auto;
-  height: 450px;
+  height: 460px;
   padding: 0 5px 0px 5px;
   overflow-x: hidden;
   overflow-y: scroll;
