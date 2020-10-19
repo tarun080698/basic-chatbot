@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from "./Buttons.jsx"
 import {FadeIn} from "react-anim-kit" 
-import data from "../../assets/DataSource/sample_diagnostics_qna.json";
+import data from "../../assets/DataSource/questionnaire.json";
 
 class Questions extends Component {
   constructor(props) {

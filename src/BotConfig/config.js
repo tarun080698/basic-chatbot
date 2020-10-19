@@ -5,7 +5,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import BotAvatar from "../Widgets/BotView/BotAvatar";
 import UserAvatar from "../Widgets/UserView/UserAvatar";
 
-import data from "../assets/DataSource/sample_diagnostics_qna.json";
+import data from "../assets/DataSource/questionnaire.json";
 import Questions from "../Widgets/Questions/Question";
 
 const botName = "Donna";
@@ -20,7 +20,7 @@ const config = {
       terminateLoading: true,
       delay: 500,
     }),
-    createChatBotMessage(`I work for DNIF. What can i help you?`, {
+    createChatBotMessage(`I work for <company>. What can i help you?`, {
       loading: true,
       terminateLoading: true,
       // widget:"questions",
