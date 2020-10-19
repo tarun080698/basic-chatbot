@@ -12,6 +12,9 @@ class Questions extends Component {
     } 
   }
 
+  componentWillUnmount() { 
+    console.log("tarun");
+  }
 
   updateId(goto, option) { 
     console.log("in update")

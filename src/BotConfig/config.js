@@ -23,7 +23,7 @@ const config = {
     createChatBotMessage(`I work for DNIF. What can i help you?`, {
       loading: true,
       terminateLoading: true,
-      widget:"questions",
+      // widget:"questions",
       delay: 1000,
     }),
   ],
